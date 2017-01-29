@@ -1,0 +1,73 @@
+/*! Theme Name: Portfolio Theme */
+/*! Description: Nathan's Portfolio Theme built with Timber */
+/*! Author: Nathan Hulsey */
+/*! Version: 1.0 */
+/*! The actual style.css, this is where I put lots of general styling */
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*! Theme Name: Minimum Theme */
+/*! Description: Test */
+/*! Author: Test */
+/*! Version: 1.0 */
+h1 {
+  color: red; }
+
+h2 {
+  color: blue; }
+
+/*! Theme Name: Minimum Theme */
+/*! Description: Test */
+/*! Author: Test */
+/*! Version: 1.0 */
+h1 {
+  color: red; }
+
+h2 {
+  color: blue; }
+
+/*! Theme Name: Minimum Theme */
+/*! Description: Test */
+/*! Author: Test */
+/*! Version: 1.0 */
+h1 {
+  color: red; }
+
+h2 {
+  color: blue; }
+
+h1 {
+  color: red; }
+
+h2 {
+  color: red; }
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.article-test {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  .article-test:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    .article-test {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .article-test:last-child {
+        margin-right: 0; } }
+
+/*# sourceMappingURL=style.css.map */

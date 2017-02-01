@@ -4,3 +4,8 @@
 # Ignore .DS_store file
 .DS_Store
 
+# Ignore CSS
+/css
+
+# Ignore Lib (where Neat and Bourbon are stored)
+/lib

@@ -3,10 +3,76 @@
 /*! Author: Test */
 /*! Version: 1.0 */
 
+@import "../lib/bourbon/bourbon.scss"
+@import "../lib/neat/neat-helpers"
 
-h1
-  color: red
+@import "../lib/neat/neat.scss"
+@import "_variables.sass"
+@import "_reset.sass"
+
+.project__title-container
+  margin-bottom: 10rem
+
+.project__h1,
+.project__subtitle
+  +span-columns(12)
+  text-align: center
+  color: $darkGray
+  @media screen and (min-width: 768px)
+    +span-columns(6 of 12)
+    +shift(3)
 
 
-h2
-  color: blue
+.project__h1
+  font-family: $adelleSans, sans-serif
+  font-weight: 700
+  text-transform: uppercase
+  font-size: 4rem
+  letter-spacing: 20px
+
+.project__subtitle
+  font-family: $robotoMono, monospace
+  font-size: 1.4rem
+
+.project__h2
+.project__h3
+  font-family: $robotoMono, monospace
+  font-size: 1.2rem
+  color: $lightGray
+
+.project__details, .project__about
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(5 of 12)
+    +shift(7)
+
+
+/*! Styling for each Layout type */
+
+/*! 4 Columns Right */
+.layout__col-4--right
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(5 of 12)
+
+/*! 4 Columns Left */
+.layout__col-4--left
+  +row
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(5 of 12)
+
+// .layout
+//   @include row()
+//   &__col-4
+//     @include span-columns(4)
+//     @media screen and (max-width: 768px)
+//       @include span-columns(12 of 12)
+//     &--right
+//       color: blue
+//     &--left
+//       color: red
+
+/*! helper classes for layout */
+.right
+  float: right

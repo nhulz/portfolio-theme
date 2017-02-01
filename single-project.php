@@ -12,6 +12,8 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
+$context['Project Type'] = Timber::get_terms('Project Type', array('parent' => 0));
+
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

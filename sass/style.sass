@@ -5,22 +5,26 @@
 
 /*! The actual style.css, this is where I put lots of general styling */
 @import "../lib/bourbon/bourbon.scss"
+@import "../lib/neat/neat-helpers"
+/*Visual grid has to be initalized before neat because the default is false. */
+$visual-grid: true
 @import "../lib/neat/neat.scss"
 
 @import "_reset.sass"
 @import "_mixins.sass"
 @import "_variables.sass"
 
-h1
-  color: red
+@import "project.sass"
 
-h2
-  color: red
+html
+  font-size: 62.5%
 
+body
+  font-size: 1.4rem /* =14px */
+
+/* Grid and Layout primary formatting */
 .container
-  @include outer-container()
+  @include outer-container(960px)
 
-.article-test
-  @include span-columns(4)
-  @media screen and (max-width: 768px)
-    @include span-columns(12 of 12)
+.wrapper-row
+  +row()

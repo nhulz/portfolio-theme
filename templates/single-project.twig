@@ -1,53 +1,124 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="project">
 
 <div class="wrapper-row">
 	<div class="container project__title-container">
-			<h1 class="project__h1">{{post.title}}</h1>
+			<h1 class="project__title">{{post.title}}</h1>
 			<div class="project__subtitle">{{post.get_field('project_subtitle')}}</div>
 	</div>
 </div>
 
 <div class="wrapper-row">
 	<div class="container">
-		<ul class="project__details">
-			<span class="project__h3">Details</span>
-			{% for cat in project %}
-			<li>{{cat.name}}</li>
-			{% endfor %}
-		</ul>
-		<div class="project__about">
-			<span class="project__h3">About</span>
-			<p>{{ post.get_field('project_about')}}</p>
+		<div class="project__details">
+			<span class="project__small-header">Details</span>
+			<ul>
+				{% for cat in project_types %}
+				<li>{{cat.name}}</li>
+				{% endfor %}
+			</ul>
 		</div>
+		<div class="project__about">
+			<span class="project__small-header">About</span>
+			{{ post.get_field('project_about')}}
+		</div>
+		<img class="project__hero-image" src="{{TimberImage(post.project_hero_image).src}}"/>
 	</div>
+	<svg class="svg-streak" width="12px" height="723px" viewBox="714 290 12 723" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+	    <desc>Created with Sketch.</desc>
+	    <defs>
+	        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+	            <stop stop-color="{{post.get_field('streak_color')}}" offset="0%"></stop>
+		            <stop stop-color="{{post.get_field('streak_color')}}" stop-opacity="0" offset="100%"></stop>
+	        </linearGradient>
+	    </defs>
+	    <rect id="Rectangle-2" stroke="none" fill="url(#linearGradient-1)" fill-rule="evenodd" x="714" y="290" width="20" height="723"></rect>
+	</svg>
 </div>
 
 
 			<!-- This for loop loads all possible layouts for a single project -->
+			<!-- Content 4 columns pushed right-->
+		<div class="project__layouts">
 			{% for media_item in post.get_field('project_layout') %}
 			  {% if media_item.acf_fc_layout == 'layout_col_4_right' %}
 			  <div class="wrapper-row">
-			    <div class="container"> <!-- This container initializes a Neat grid -->
+			    <div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
 			      <div class="layout__col-4--right right">
-			        {{media_item.content}}
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+							<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
 			      </div>
 			    </div>
 			  </div>
+				<!-- Content 4 columns pushed left -->
 			  {% elseif media_item.acf_fc_layout == 'layout_col_4_left' %}
 			  <div class="wrapper-row">
-			    <div class="container"> <!-- This container initializes a Neat grid -->
+			    <div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
 			      <div class="layout__col-4--left">
-			        {{media_item.content}}
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
 			      </div>
 			    </div>
 			  </div>
-			  {% endif %}
+				<!-- Content 8 columns pushed left -->
+				{% elseif media_item.acf_fc_layout == 'layout_col_8_left' %}
+				<div class="wrapper-row">
+					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
+						<div class="layout__col-8--left">
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<!-- Content 8 columns pushed right -->
+				{% elseif media_item.acf_fc_layout == 'layout_col_8_right' %}
+				<div class="wrapper-row">
+					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
+						<div class="layout__col-8--right right">
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<!-- Full width layout -->
+				{% elseif media_item.acf_fc_layout == 'layout_col_12' %}
+				<div class="wrapper-row">
+					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
+						<div class="layout__col-12">
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				{% endif %}
 			{% endfor %}
+		</div>
 
-
-
-</div> <!-- Project Wrapper-->
 {% endblock %}

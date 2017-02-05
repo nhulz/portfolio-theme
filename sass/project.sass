@@ -10,10 +10,14 @@
 @import "_variables.sass"
 @import "_reset.sass"
 
+.project__layouts
+  p
+    margin-bottom: 5rem
+
 .project__title-container
   margin-bottom: 10rem
 
-.project__h1,
+.project__title,
 .project__subtitle
   +span-columns(12)
   text-align: center
@@ -22,38 +26,68 @@
     +span-columns(6 of 12)
     +shift(3)
 
-
-.project__h1
+.project__title
   font-family: $adelleSans, sans-serif
   font-weight: 700
   text-transform: uppercase
   font-size: 4rem
   letter-spacing: 20px
 
-.project__subtitle
+.project__details,
+.project__subtitle,
+.project__content-title,
+.project__small-header,
+p
   font-family: $robotoMono, monospace
-  font-size: 1.4rem
 
-.project__h2
-.project__h3
-  font-family: $robotoMono, monospace
+.project__details,
+p
+  font-size: 1.2rem
+
+.project__subtitle
+  font-size: 1.4rem
+  color: $darkGray
+
+.project__content-title
+  font-size: 2.4rem
+  color: $darkGray
+
+.project__small-header
   font-size: 1.2rem
   color: $lightGray
 
+
 .project__details, .project__about
-  +span-columns(12)
+  +span-columns(11)
+  +shift(1)
   @media screen and (min-width: 768px)
     +span-columns(5 of 12)
     +shift(7)
 
+.project__hero-image
+  +span-columns(12)
+  margin-top: 2rem
+  @media screen and (min-width: 768px)
+    +span-columns(6 of 12)
+    +shift(3)
+
 
 /*! Styling for each Layout type */
+// .layout__col-4--right,
+// .layout__col-4--left,
+// .layout__col-8--right,
+// .layout__col-8--left,
+// .layout__col-12
+
 
 /*! 4 Columns Right */
 .layout__col-4--right
   +span-columns(12)
   @media screen and (min-width: 768px)
     +span-columns(5 of 12)
+    +shift(5)
+  img
+    +span-columns(12)
 
 /*! 4 Columns Left */
 .layout__col-4--left
@@ -61,6 +95,33 @@
   +span-columns(12)
   @media screen and (min-width: 768px)
     +span-columns(5 of 12)
+  img
+    +span-columns(12)
+
+.layout__col-8--right
+  +row
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(8 of 12)
+  img
+    +span-columns(12)
+
+
+.layout__col-8--left
+  +row
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(5 of 12)
+  img
+    +span-columns(12)
+
+.layout__col-12
+  +row
+  +span-columns(12)
+  img
+    +span-columns(12)
+
+
 
 // .layout
 //   @include row()
@@ -73,6 +134,24 @@
 //     &--left
 //       color: red
 
+
+.svg-streak
+  +span-columns(2 of 12)
+  +shift(5)
+  @media screen and (min-width: 768px)
+    +span-columns(2 of 12)
+    +shift(5)
+  position: absolute
+  left: 0
+  top: 20rem
+  z-index: -1
+
+
 /*! helper classes for layout */
 .right
   float: right
+
+.container--padding
+  margin-bottom: 5rem
+  @media screen and (min-width: 768px)
+    margin-bottom: 10rem

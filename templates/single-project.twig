@@ -43,6 +43,7 @@
 			<!-- Content 4 columns pushed right-->
 		<div class="project__layouts">
 			{% for media_item in post.get_field('project_layout') %}
+			<!-- Content 4 columns pushed right -->
 			  {% if media_item.acf_fc_layout == 'layout_col_4_right' %}
 			  <div class="wrapper-row">
 			    <div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
@@ -72,6 +73,36 @@
 			      </div>
 			    </div>
 			  </div>
+				<!-- Content 6 columns pushed right -->
+				{% elseif media_item.acf_fc_layout == 'layout_col_6_right' %}
+				<div class="wrapper-row">
+					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
+						<div class="layout__col-6--right right">
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<!-- Content 6 columns pushed left -->
+				{% elseif media_item.acf_fc_layout == 'layout_col_6_left' %}
+				<div class="wrapper-row">
+					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
+						<div class="layout__col-6--left">
+							{% if media_item.content_title == true %}
+								<h2 class="project__content-title">{{media_item.content_title}}</h2>
+							{% endif %}
+							{{media_item.content}}
+							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+							{% endif %}
+						</div>
+					</div>
+				</div>
 				<!-- Content 8 columns pushed left -->
 				{% elseif media_item.acf_fc_layout == 'layout_col_8_left' %}
 				<div class="wrapper-row">

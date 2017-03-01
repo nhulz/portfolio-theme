@@ -51,7 +51,7 @@ p
 
 .project__content-title
   font-size: 2.4rem
-  color: $darkGray
+  //color: $darkGray
 
 .project__small-header
   font-size: 1.2rem
@@ -159,7 +159,8 @@ p
     +shift(5)
   position: absolute
   left: 0
-  top: 20rem
+  //transform: translateY(-125rem)
+  top: -15rem
   z-index: -1
 
 
@@ -171,3 +172,11 @@ p
   margin-bottom: 5rem
   @media screen and (min-width: 768px)
     margin-bottom: 10rem
+
+.layout__background-color
+  height: 40rem
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1

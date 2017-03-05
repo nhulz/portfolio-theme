@@ -2,12 +2,13 @@
 
 {% block content %}
 <div class="container">
-
+	<p> This website is currently under construction and always will be! </p>
 	{% for post in projects %}
-	<div class="article-test">
-		{{post.title}}
+	<div class="project-wrapper">
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	</div>
 	{% endfor %}
+
+<div class="background-text">Strategy meets Empathy</div>
 </div>
 {% endblock %}

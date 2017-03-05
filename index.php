@@ -14,7 +14,7 @@
  */
 
 $context = Timber::get_context();
-$context['projects'] = Timber::get_posts('projects');
+$context['projects'] = Timber::get_posts( array('post_type' => 'projects') );
 $context['project_types'] = Timber::get_terms('project-type');
 $templates = array( 'index.twig' );
 if ( is_home() ) {

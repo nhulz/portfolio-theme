@@ -16,6 +16,7 @@
 
 @import "project.sass"
 @import "index.sass"
+@import "project-teaser.sass"
 
 html
   font-size: 62.5%
@@ -31,3 +32,26 @@ body
 .wrapper-row
   +row()
   position: relative
+
+
+/* Navigation */
+.nav-main
+  ul
+    list-style: none
+    text-align: left
+    padding: 0
+    margin: 4rem 0 4rem 0
+    +span-columns(4)
+
+  li
+    display: inline-block
+    font-family: $robotoMono
+    margin-right: 2rem
+
+  a
+    text-decoration: none
+    color: $darkGray
+
+/* Footer */
+.footer__copyright
+  padding: 5rem 0 0 0

@@ -28,7 +28,11 @@ body
 /* Grid and Layout primary formatting */
 .container
   @include outer-container(960px)
-
+  margin: 0 1rem
+  @media screen and (min-width: 768px)
+    margin-left: auto
+    margin-right: auto
+    
 .wrapper-row
   +row()
   position: relative
@@ -55,3 +59,5 @@ body
 /* Footer */
 .footer__copyright
   padding: 5rem 0 0 0
+  position: absolute
+  bottom: 2rem

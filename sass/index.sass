@@ -5,20 +5,33 @@
 
 @import "../lib/bourbon/bourbon.scss"
 @import "../lib/neat/neat-helpers"
-
+$visual-grid: true
 @import "../lib/neat/neat.scss"
 @import "_variables.sass"
 @import "_reset.sass"
 
 .project-wrapper
-  +span-columns(12)
+  position: absolute
+  top: 100%
+
+.project-teaser
+  position: relative
+
+.project-teaser__thumb
+  position: relative
+
+.project-teaser__title
+  position: absolute
+  left: 0
+
+.fix-container
+  position: fixed
+  padding: 2em
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
 
 a
-  text-decoration: none
-  text-align: center
-  cursor: pointer
-  font-family: $adelleSans
-  color: $darkGray
 
 a:hover
   text-decoration: none
@@ -31,43 +44,34 @@ a:active
   text-decoration: none
   color: $darkGray
 
-.project-title
-  letter-spacing: auto
-  text-align: left
-  font-size: 6rem
-  color: $darkGray
-  font-family: $adelleSans, sans-serif
-  font-weight: 700
-  text-transform: uppercase
+// .background-text
+//   +span-columns(12 of 12)
+//   +shift(0)
+//   @media screen and (min-width: 768px)
+//     +span-columns(6 of 12)
+//     +shift(3)
+//     margin-top: 20%
 
-.background-text
-  position: fixed
-  font-family: "adelle-sans"
+#title
+  font-weight: 700
+  font-family: $adelleSans
+  font-size: 5rem
+  //text-transform: uppercase
   letter-spacing: auto
   text-align: center
-  top: 50%
-  +span-columns(6)
-  +shift()
-
-
-.strike
-  position: relative
-  cursor: pointer
-  padding: 0 2rem
-
-.strike span
-  position: absolute
-  top: 40%
-  left: 0
   display: block
-  width: 100%
-  height: 20px
+  margin-bottom: 2rem
 
-  transform: scaleX(0)
-  transform-origin: right
-  transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1)
+#subtitle
+  font-family: $robotoMono
+  font-size: 1.8rem
+  text-align: center
+  display: block
 
-.strike:hover span
-  width: 100%
-  transform: scaleX(1)
-  transform-origin: left
+
+.svg-streak-index
+  position: absolute
+  top: 50%
+  left: calc(50% - 10px)
+  z-index: -1
+  // transform: translate(-50%, -50%)

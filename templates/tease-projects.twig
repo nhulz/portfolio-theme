@@ -1,11 +1,11 @@
 {% extends "tease.twig" %}
 
 {% block content %}
-	<div class="project-title">
-		<a class="strike" href="{{post.link}}">
-		   {{post.title}}
-		   <span style="background: {{ post.get_field('streak_color') }}"></span>
-		</a>
+<a class="" href="{{post.link}}">
+	<div class="project-teaser">
+			<img class="project-teaser__thumb" src="{{TimberImage(post.project_thumb).src}}"/>
+		  <div class="project-teaser__title">{{post.title}}</div>
 	</div>
+</a>
 
 {% endblock %}

@@ -1,14 +1,44 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="container">
-	<p> This website is currently under construction and always will be! </p>
+	<div class="wrapper-row">
+		<div class="fix-container">
+			<div class="background-text">
+				<span id="title">Strategy & Empathy</span>
+				<span id="subtitle">Nathan Hulsey is a user experience designer and creative director based in Boston Massachusettes.
+					He believes that design is a strategic tool for businesses and a language for understanding human beings.</span>
+				</div>
+
+				<svg class="svg-streak-index" width="20px" height="723px" viewBox="714 290 12 723" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+					<defs>
+						<linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+							<stop stop-color="#fb9c6d" offset="0%"></stop>
+							<stop stop-color="#ffffff" stop-opacity="0" offset="100%"></stop>
+						</linearGradient>
+					</defs>
+					<rect id="Rectangle-2" stroke="none" fill="url(#linearGradient-1)" fill-rule="evenodd" x="712" y="290" width="20" height="723"></rect>
+				</svg>
+				<svg class="svg-streak" width="20px" height="723px" viewBox="714 290 12 723" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+						<desc>Created with Sketch.</desc>
+						<defs>
+								<linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+									<stop stop-color="#fb9c6d" offset="0%"></stop>
+									<stop stop-color="#ffffff" stop-opacity="0" offset="100%"></stop>
+								</linearGradient>
+						</defs>
+						<rect id="Rectangle-2" stroke="none" fill="url(#linearGradient-1)" fill-rule="evenodd" x="714" y="290" width="20" height="723"></rect>
+				</svg>
+			</div>
+		</div>
+	</div>
+
 	{% for post in projects %}
 	<div class="project-wrapper">
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	</div>
-	{% endfor %}
 
-<div class="background-text">Strategy meets Empathy</div>
-</div>
+{% endfor %}
+
 {% endblock %}

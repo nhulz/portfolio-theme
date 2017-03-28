@@ -1,11 +1,13 @@
-{% extends "tease.twig" %}
 
 {% block content %}
-<a class="" href="{{post.link}}">
-	<div class="project-teaser">
-			<img class="project-teaser__thumb" src="{{TimberImage(post.project_thumb).src}}"/>
-		  <div class="project-teaser__title">{{post.title}}</div>
-	</div>
-</a>
+<div class="project-teaser">
+	<a class="" href="{{post.link}}">
+		<img class="project-teaser__thumb" src="{{TimberImage(post.project_thumb).src}}"/>
+			<div class="project-teaser__caption">
+				<div class="project-teaser__title">{{post.title}}</div>
+				<div class="project-teaser__subtitle">{{post.get_field('project_subtitle')}}</div>
+			</div>
+	</a>
+</div>
 
 {% endblock %}

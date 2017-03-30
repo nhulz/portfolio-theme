@@ -3,10 +3,12 @@
 <div class="project-teaser">
 	<a class="" href="{{post.link}}">
 		<img class="project-teaser__thumb" src="{{TimberImage(post.project_thumb).src}}"/>
+		<div class="project-teaser__caption-wrapper">
 			<div class="project-teaser__caption">
 				<div class="project-teaser__title">{{post.title}}</div>
 				<div class="project-teaser__subtitle">{{post.get_field('project_subtitle')}}</div>
 			</div>
+		</div>
 	</a>
 </div>
 

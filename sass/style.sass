@@ -26,6 +26,11 @@ body
 /* Grid and Layout primary formatting */
 .container
   @include outer-container(960px)
+  margin-left: 1rem
+  margin-right: 1rem
+  @media screen and (min-width: 980px)
+    margin-left: auto
+    margin-right: auto
 
 .wrapper-row
   +row()

@@ -1,11 +1,11 @@
-/*! Theme Name: Minimum Theme */
-/*! Description: Test */
-/*! Author: Test */
+/*! Theme Name: Portfolio Theme */
+/*! Description: Nathan's Portfolio Site */
+/*! Author: Nathan Hulsey */
 /*! Version: 1.0 */
 
 @import "../lib/bourbon/bourbon.scss"
 @import "../lib/neat/neat-helpers"
-$visual-grid: true
+// $visual-grid: true
 @import "../lib/neat/neat.scss"
 @import "_variables.sass"
 @import "_reset.sass"
@@ -30,8 +30,10 @@ $visual-grid: true
   font-family: $adelleSans, sans-serif
   font-weight: 700
   text-transform: uppercase
-  font-size: 4rem
+  font-size: 3rem
   letter-spacing: 20px
+  @media screen and (min-width: 768px)
+    font-size: 4rem
 
 .project__details,
 .project__subtitle,
@@ -226,6 +228,6 @@ p
     overflow: auto
 
 .medium_space
-  height: 50rem
+  height: 5rem
   @media screen and (min-width: 768px)
     height: 20rem

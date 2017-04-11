@@ -12,7 +12,7 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
-$context['Project Type'] = Timber::get_terms('Project Type', array('parent' => 0));
+$context['project_types'] = Timber::get_terms('project-type');
 
 
 if ( post_password_required( $post->ID ) ) {

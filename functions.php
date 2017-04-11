@@ -29,7 +29,7 @@ class PortfolioTheme extends TimberSite {
 
 	function register_post_types() {
 		/* Project */
-		register_post_type( 'project',
+		register_post_type( 'projects',
 			array(
 				'labels' => array(
 					'name' => __( 'Projects' ),
@@ -43,7 +43,7 @@ class PortfolioTheme extends TimberSite {
 
 	function register_taxonomies() {
 		// This is the Project Type
-		register_taxonomy('project-type', 'project', array(
+		register_taxonomy('project-type', 'projects', array(
 			'hierarchical' => true,
 			'show_ui' => true,
 			// This array of options controls the labels displayed in the WordPress Admin UI

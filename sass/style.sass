@@ -7,7 +7,7 @@
 @import "../lib/bourbon/bourbon.scss"
 @import "../lib/neat/neat-helpers"
 /*Visual grid has to be initalized before neat because the default is false. */
-$visual-grid: true
+// $visual-grid: true
 @import "../lib/neat/neat.scss"
 
 @import "_reset.sass"
@@ -21,10 +21,17 @@ html
 
 body
   font-size: 1.4rem /* =14px */
+  margin: 0
 
 /* Grid and Layout primary formatting */
 .container
   @include outer-container(960px)
+  margin-left: 1rem
+  margin-right: 1rem
+  @media screen and (min-width: 980px)
+    margin-left: auto
+    margin-right: auto
 
 .wrapper-row
   +row()
+  position: relative

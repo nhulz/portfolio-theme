@@ -1,11 +1,11 @@
-/*! Theme Name: Minimum Theme */
-/*! Description: Test */
-/*! Author: Test */
+/*! Theme Name: Portfolio Theme */
+/*! Description: Nathan's Portfolio Site */
+/*! Author: Nathan Hulsey */
 /*! Version: 1.0 */
 
 @import "../lib/bourbon/bourbon.scss"
 @import "../lib/neat/neat-helpers"
-
+// $visual-grid: true
 @import "../lib/neat/neat.scss"
 @import "_variables.sass"
 @import "_reset.sass"
@@ -30,15 +30,20 @@
   font-family: $adelleSans, sans-serif
   font-weight: 700
   text-transform: uppercase
-  font-size: 4rem
+  font-size: 3rem
   letter-spacing: 20px
+  @media screen and (min-width: 768px)
+    font-size: 4rem
 
 .project__details,
 .project__subtitle,
 .project__content-title,
 .project__small-header,
-p
+.project__p
   font-family: $robotoMono, monospace
+  font-weight: normal
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 .project__details,
 p
@@ -78,6 +83,8 @@ p
 // .layout__col-4--left,
 // .layout__col-8--right,
 // .layout__col-8--left,
+// .layout__col-10--left,
+// .layout__col-10--right,
 // .layout__col-12
 
 
@@ -88,7 +95,7 @@ p
     +span-columns(5 of 12)
     +shift(5)
   img
-    +span-columns(12)
+    width: 100%
 
 /*! 4 Columns Left */
 .layout__col-4--left
@@ -97,7 +104,17 @@ p
   @media screen and (min-width: 768px)
     +span-columns(5 of 12)
   img
-    +span-columns(12)
+    width: 100%
+
+.layout__col-4--center
+  +row
+  +span-columns(12 of 12)
+  img
+    width: 100%
+  @media screen and (min-width: 768px)
+    +span-columns(5 of 12)
+    img
+      +shift(9)
 
 .layout__col-6--right
   +row
@@ -105,15 +122,15 @@ p
   @media screen and (min-width: 768px)
     +span-columns(6 of 12)
   img
-    +span-columns(12)
+    width: 100%
 
 .layout__col-6--left
   +row
   +span-columns(12)
   @media screen and (min-width: 768px)
-    +span-columns(8 of 12)
+    +span-columns(6 of 12)
   img
-    +span-columns(12)
+    width: 100%
 
 .layout__col-8--right
   +row
@@ -121,7 +138,7 @@ p
   @media screen and (min-width: 768px)
     +span-columns(8 of 12)
   img
-    +span-columns(12)
+    width: 100%
 
 .layout__col-8--left
   +row
@@ -129,13 +146,29 @@ p
   @media screen and (min-width: 768px)
     +span-columns(8 of 12)
   img
-    +span-columns(12)
+    width: 100%
+
+.layout__col-10--right
+  +row
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(10 of 12)
+  img
+    width: 100%
+
+.layout__col-10--left
+  +row
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(10 of 12)
+  img
+    width: 100%
 
 .layout__col-12
   +row
   +span-columns(12)
   img
-    +span-columns(12)
+    width: 100%
 
 
 
@@ -183,3 +216,18 @@ p
 
 .bg__container-padding
   padding-top: 2rem
+
+.layout__bg-img
+  position: absolute
+  height: auto
+  width: 100%
+  bottom: 50%
+  z-index: -1
+  overflow: hidden
+  @media screen and (min-width: 768px)
+    overflow: auto
+
+.medium_space
+  height: 5rem
+  @media screen and (min-width: 768px)
+    height: 20rem

@@ -8,7 +8,6 @@
 			<div class="project__subtitle">{{post.get_field('project_subtitle')}}</div>
 	</div>
 </div>
-
 <div class="wrapper-row">
 	<div class="container">
 		<div class="project__details">
@@ -21,13 +20,11 @@
 		</div>
 		<div class="project__about">
 			<span class="project__small-header">About</span>
-			{{ post.get_field('project_about')}}
+			<div class="project__p">{{ post.get_field('project_about')}}</div>
 		</div>
 		<img class="project__hero-image" src="{{TimberImage(post.project_hero_image).src}}"/>
 	</div>
-	<svg class="svg-streak" width="20px" height="723px" viewBox="714 290 12 723" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-	    <desc>Created with Sketch.</desc>
+	<svg class="svg-streak" width="12px" height="723px" viewBox="714 290 12 723" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	    <defs>
 	        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
 	            <stop stop-color="{{post.get_field('streak_color')}}" offset="0%"></stop>
@@ -37,130 +34,58 @@
 	    <rect id="Rectangle-2" stroke="none" fill="url(#linearGradient-1)" fill-rule="evenodd" x="714" y="290" width="20" height="723"></rect>
 	</svg>
 </div>
+	<!-- This for loop loads all possible layouts for a single project -->
+	<!-- Content 4 columns pushed right-->
+<div class="project__layouts">
+	{% for media_item in post.get_field('project_layout') %}
 
+	<!-- Content 4 columns pushed right -->
+	  {% if media_item.acf_fc_layout == 'layout_col_4_right' %}
+		{% include "project-layouts/layout_col_4_right.twig" %}
 
-			<!-- This for loop loads all possible layouts for a single project -->
-			<!-- Content 4 columns pushed right-->
-		<div class="project__layouts">
-			{% for media_item in post.get_field('project_layout') %}
-			<!-- Content 4 columns pushed right -->
-			  {% if media_item.acf_fc_layout == 'layout_col_4_right' %}
-			  <div class="wrapper-row">
-			    <div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
-			      <div class="layout__col-4--right right" style="color:{{media_item.text_color}}">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}}
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-							<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-								{% if media_item.has_bg %}
-								<div class="background-color" style="background-color:{{media_item.bg_color}}"></div>
-								{% endif %}
-							{% endif %}
-			      </div>
-			    </div>
-			  </div>
-				<!-- Content 4 columns pushed left -->
-			  {% elseif media_item.acf_fc_layout == 'layout_col_4_left' %}
-			  <div class="wrapper-row">
-			    <div class="container {{media_item.container_padding}}
-					{% if media_item.has_bg %} bg__container-padding {% endif %}"> <!-- This container initializes a Neat grid -->
-			      <div class="layout__col-4--left" style="color:{{media_item.text_color}}">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}} <!-- Inputs the main content field-->
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-							{% endif %}
-			      </div>
-			    </div>
-					{% if media_item.has_bg %}
-					<div class="layout__background-color" style="background-color:{{media_item.bg_color}}"></div>
-					<!-- <script>
-					var el = document.getElementById('className');
-					el.className += " otherClass";
-					</script> -->
-					{% endif %}
-			  </div>
-				<!-- Content 6 columns pushed right -->
-				{% elseif media_item.acf_fc_layout == 'layout_col_6_right' %}
-				<div class="wrapper-row">
-					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
-						<div class="layout__col-6--right right">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}}
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				<!-- Content 6 columns pushed left -->
-				{% elseif media_item.acf_fc_layout == 'layout_col_6_left' %}
-				<div class="wrapper-row">
-					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
-						<div class="layout__col-6--left">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}}
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				<!-- Content 8 columns pushed left -->
-				{% elseif media_item.acf_fc_layout == 'layout_col_8_left' %}
-				<div class="wrapper-row">
-					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
-						<div class="layout__col-8--left">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}}
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				<!-- Content 8 columns pushed right -->
-				{% elseif media_item.acf_fc_layout == 'layout_col_8_right' %}
-				<div class="wrapper-row">
-					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
-						<div class="layout__col-8--right right">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}}
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				<!-- Full width layout -->
-				{% elseif media_item.acf_fc_layout == 'layout_col_12' %}
-				<div class="wrapper-row">
-					<div class="container {{media_item.container_padding}}"> <!-- This container initializes a Neat grid -->
-						<div class="layout__col-12">
-							{% if media_item.content_title == true %}
-								<h2 class="project__content-title">{{media_item.content_title}}</h2>
-							{% endif %}
-							{{media_item.content}}
-							{% if media_item.content_image %} <!-- adds an image if one exists in the field -->
-								<img class="" src="{{TimberImage(media_item.content_image).src}}"/>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				{% endif %}
-			{% endfor %}
-		</div>
+		<!-- Content 4 columns pushed left -->
+	  {% elseif media_item.acf_fc_layout == 'layout_col_4_left' %}
+		{% include "project-layouts/layout_col_4_left.twig" %}
+
+		<!-- Content 4 columns centered -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_4_center' %}
+		{% include "project-layouts/layout_col_4_center.twig" %}
+
+		<!-- Content 6 columns pushed right -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_6_right' %}
+		{% include "project-layouts/layout_col_6_right.twig" %}
+
+		<!-- Content 6 columns pushed left -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_6_left' %}
+		{% include "project-layouts/layout_col_6_left.twig" %}
+
+		<!-- Content 8 columns pushed left -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_8_left' %}
+		{% include "project-layouts/layout_col_8_left.twig" %}
+
+		<!-- Content 8 columns pushed right -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_8_right' %}
+		{% include "project-layouts/layout_col_8_right.twig" %}
+
+		<!-- Content 10 columns pushed right -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_10_right' %}
+		{% include "project-layouts/layout_col_10_right.twig" %}
+
+		<!-- Content 10 columns pushed left -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_10_left' %}
+		{% include "project-layouts/layout_col_10_left.twig" %}
+
+		<!-- Full width layout -->
+		{% elseif media_item.acf_fc_layout == 'layout_col_12' %}
+		{% include "project-layouts/layout_col_12.twig" %}
+
+		<!-- Full width layout -->
+		{% elseif media_item.acf_fc_layout == 'medium_space' %}
+		{% include "project-layouts/medium_space.twig" %}
+
+		{% endif %}
+	{% endfor %}
+</div>
+
 
 {% endblock %}

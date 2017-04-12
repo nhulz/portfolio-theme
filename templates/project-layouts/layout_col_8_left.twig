@@ -1,0 +1,17 @@
+<div class="wrapper-row">
+  <div class="container {{media_item.container_padding}}
+{% if media_item.has_bg %} bg__container-padding {% endif %}"> <!-- This container initializes a Neat grid -->
+  <div class="layout__col-8--left">
+      {% if media_item.content_title == true %}
+        <h2 class="project__content-title">{{media_item.content_title}}</h2>
+      {% endif %}
+      <div class="project__p">{{media_item.content}}</div>
+      {% if media_item.content_image %} <!-- adds an image if one exists in the field -->
+        <img class="" src="{{TimberImage(media_item.content_image).src}}"/>
+      {% endif %}
+    </div>
+  </div>
+  {% if media_item.has_bg %}
+  <div class="layout__background-color" style="background-color:{{media_item.bg_color}}"></div>
+  {% endif %}
+</div>

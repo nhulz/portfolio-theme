@@ -87,6 +87,19 @@ class PortfolioTheme extends TimberSite {
 		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
+
+		/* this is where you can add your own fuctions to twig */
+		$function = new Twig_SimpleFunction('enqueue_script', function ($handle) {
+			// register it elsewhere
+			wp_enqueue_script( $handle);
+		});
+		$twig->addFunction($function);
+		$function = new Twig_SimpleFunction('enqueue_style', function ($handle) {
+			// register it elsewhere
+			wp_enqueue_style( $handle);
+		});
+		$twig->addFunction($function);
+
 		return $twig;
 	}
 

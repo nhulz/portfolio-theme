@@ -15,23 +15,59 @@
 @import "_variables.sass"
 
 @import "project.sass"
+@import "index.sass"
+@import "project-teaser.sass"
 
 html
   font-size: 62.5%
+  height: 100%
 
 body
   font-size: 1.4rem /* =14px */
   margin: 0
 
+*
+  box-sizing: border-box
+
 /* Grid and Layout primary formatting */
 .container
   @include outer-container(960px)
+<<<<<<< home-page
+  margin: 0 1rem
+  @media screen and (min-width: 768px)
+=======
   margin-left: 1rem
   margin-right: 1rem
   @media screen and (min-width: 980px)
+>>>>>>> master
     margin-left: auto
     margin-right: auto
 
 .wrapper-row
   +row()
   position: relative
+
+
+/* Navigation */
+.nav-main
+  ul
+    list-style: none
+    text-align: left
+    padding: 0
+    margin: 4rem 0 4rem 0
+    +span-columns(4)
+
+  li
+    display: inline-block
+    font-family: $robotoMono
+    margin-right: 2rem
+
+  a
+    text-decoration: none
+    color: $darkGray
+
+/* Footer */
+.footer__copyright
+  padding: 5rem 0 0 0
+  position: absolute
+  bottom: 2rem

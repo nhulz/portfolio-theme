@@ -13,7 +13,7 @@
 		<div class="project__details">
 			<span class="project__small-header">Details</span>
 			<ul>
-				{% for cat in project_types %}
+				{% for cat in post.terms("project-type") %}
 				<li>{{cat.name}}</li>
 				{% endfor %}
 			</ul>

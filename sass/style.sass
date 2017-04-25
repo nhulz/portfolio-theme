@@ -17,6 +17,7 @@
 @import "project.sass"
 @import "index.sass"
 @import "project-teaser.sass"
+@import "about.sass"
 
 html
   font-size: 62.5%
@@ -32,20 +33,50 @@ body
 /* Grid and Layout primary formatting */
 .container
   @include outer-container(960px)
-<<<<<<< home-page
   margin: 0 1rem
   @media screen and (min-width: 768px)
-=======
-  margin-left: 1rem
-  margin-right: 1rem
+    margin-left: 1rem
+    margin-right: 1rem
   @media screen and (min-width: 980px)
->>>>>>> master
     margin-left: auto
     margin-right: auto
 
 .wrapper-row
   +row()
   position: relative
+
+/* Links */
+a
+  text-decoration: none
+  color: $darkGray
+
+.strike
+  position: relative
+  cursor: pointer
+
+.strike:after
+  content: ''
+  position: absolute
+  top: 50%
+  left: 0
+  display: block
+  width: 100%
+  height: 4px
+  background: orange
+  opacity: .4
+  /* set the initial scale to 0 */
+  transform: scaleX(0)
+  /* set transform origin */
+  transform-origin: right
+  transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1)
+
+.strike:hover:after
+  width: 100%
+  transform: scaleX(1)
+  /* reset transform origin
+     so the line slides out
+     opposite side */
+  transform-origin: left
 
 
 /* Navigation */

@@ -1,0 +1,80 @@
+
+@import "../lib/bourbon/bourbon.scss"
+@import "../lib/neat/neat-helpers"
+// $visual-grid: true
+@import "../lib/neat/neat.scss"
+@import "_variables.sass"
+@import "_reset.sass"
+
+.about__container
+  padding-top: 0rem
+  @media screen and (min-width: 768px)
+    padding-top: 6rem
+
+.about__info__wrapper
+  +span-columns(12)
+  @media screen and (min-width: 450px)
+    +span-columns(6)
+  @media screen and (min-width: 768px)
+    +span-columns(6)
+
+.about__p
+  +span-columns(12)
+  +shift(0)
+  font-family: $robotoMono
+  font-weight: 500
+  font-size: 1.5rem
+  margin-top: 1rem
+  margin-bottom: 3rem
+  @media screen and (min-width: 450px)
+    +span-columns(6 of 6)
+  @media screen and (min-width: 768px)
+    +span-columns(6 of 6)
+    margin-top: 0
+
+.about__img
+  +span-columns(12)
+  @media screen and (min-width: 415px)
+    +span-columns(5)
+  @media screen and (min-width: 768px)
+    +span-columns(4)
+
+.about__info
+  border-top: 2px solid black
+  padding: 1rem 0 4rem 0
+  +span-columns(12)
+  @media screen and (min-width: 768px)
+    +span-columns(3 of 6)
+  @media screen and (min-width: 868px)
+    +span-columns(3 of 6)
+    margin-top: 1.5rem
+
+  &__header
+    font-family: $adelleSans
+    font-weight: 800
+    font-size: 3rem
+  @media screen and (min-width: 768px)
+    font-size: 2rem
+    // text-transform: uppercase
+
+  &__item
+    padding-top: 1rem
+    &__subhead
+      display: block
+      font-family: $robotoMono
+      font-weight: bold
+      font-size: 1.5rem
+      text-transform: uppercase
+    @media screen and (min-width: 768px)
+      font-size: 1.2rem
+
+    &__body
+      display: inline-block
+      font-size: 1.5rem
+      font-family: $robotoMono
+      @media screen and (min-width: 768px)
+        font-size: 1.2rem
+
+
+.social-bar
+  padding: .5rem

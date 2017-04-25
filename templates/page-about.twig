@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="wrapper-row">
+  <div class="container about__container">
+    <img class="about__img" src="{{ theme.link }}/assets/nathan.jpg"/>
+    <div class="about__info__wrapper">
+      <div class="about__p">
+        Hey there! I'm Nathan, an experience designer, photographer, and design strategist based in Boston. At the intersection of design and business, I work with my clients to understand their organization, industry, and users to create thoughtful and impactful experiences.
+        <br/><br/>
+        When I'm not solving design challenges, you can find me in the White Mountains hiking and snowboarding, or in a random Jazz bar somewhere in Boston (ask me about Wally's).
+      </div>
+      <div class="about__info">
+        <div class="about__info__header">Contact</div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">Email</span>
+          <span class="about__info__item__body strike">hulsey.nathan@gmail.com</span>
+        </div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">Resume</span>
+          <a target="_blank" href="{{ theme.link }}/assets/resume_nathan-hulsey.pdf">
+            <span class="about__info__item__body strike">View PDF</span>
+          </a>
+        </div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">Social</span>
+          <a target="_blank" href="http://instagram.com/nhulz">
+            <span class="about__info__item__body strike">Instagram</span>
+          </a>
+          <span class="social-bar">|</span>
+          <a target="_blank" href="https://www.flickr.com/gp/112971126@N05/e7PNb7"><span class="about__info__item__body strike">Flickr</span>
+          </a>
+          <span class="social-bar">|</span>
+          <a target="_blank" href="http://8tracks.com/nhulz">
+            <span class="about__info__item__body strike">8Tracks</span>
+          </a>
+        </div>
+      </div>
+      <div class="about__info">
+        <div class="about__info__header">Experience</div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">May 2016 - May 2017</span>
+          <a target="_blank" href="http://neu.edu/scout">
+            <span class="about__info__item__body strike">Executive Director, Scout</span>
+          </a>
+        </div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">May 2015 - May 2016</span>
+          <a target="_blank" href="http://neu.edu/scout">
+            <span class="about__info__item__body strike">Design Director, Scout</span>
+          </a>
+        </div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">Jan 2015 - June 2015</span>
+          <a target="_blank" href="http://www.ronikdesign.com/">
+            <span class="about__info__item__body strike">Design Co-op, Ronik Design</span>
+          </a>
+        </div>
+        <div class="about__info__item">
+          <span class="about__info__item__subhead">June 2014 - Aug 2014</span>
+          <a target="_blank" href="http://www.mycestro.com/">
+            <span class="about__info__item__body strike">Designer, Innovative Devices</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

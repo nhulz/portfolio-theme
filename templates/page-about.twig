@@ -66,4 +66,20 @@
     </div>
   </div>
 
+  <script>
+    // Script that runs the intersection observer
+    const options = { threshold: 0.1 }
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if ( entry.target.classList.contains('handled') ) {
+          return
+        }
+        entry.target.classList.add('handled')
+      })
+    }
+    const observer = new IntersectionObserver(callback, options)
+    const targets = document.querySelectorAll('div')
+    targets.forEach(target => observer.observe(target))
+  </script>
+
 {% endblock %}

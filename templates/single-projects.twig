@@ -87,5 +87,10 @@
 	{% endfor %}
 </div>
 
-
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+// enables Scroll Reveal
+window.sr = ScrollReveal();
+sr.reveal("div[class^=layout]");
+</script>
 {% endblock %}

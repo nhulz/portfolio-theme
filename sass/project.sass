@@ -10,6 +10,7 @@
 @import "_variables.sass"
 @import "_reset.sass"
 
+
 .project__layouts
   p
     margin-bottom: 5rem
@@ -45,10 +46,14 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+.project__details
+  margin-top: 5rem
+
 .project__details,
 p
   font-size: 1.45rem
   line-height: 2rem
+
 
 .project__subtitle
   font-size: 1.4rem
@@ -88,100 +93,91 @@ p
 // .layout__col-12
 
 
-/*! 4 Columns Right */
-.layout__col-4--right
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(5 of 12)
-    +shift(5)
-  img
-    width: 100%
+.layout
+  opacity: 0
+  transition: opacity 0.4s ease-out
 
-/*! 4 Columns Left */
-.layout__col-4--left
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(5 of 12)
-  img
-    width: 100%
-
-.layout__col-4--center
-  +row
-  +span-columns(12 of 12)
-  img
-    width: 100%
-  @media screen and (min-width: 768px)
-    +span-columns(5 of 12)
+  /*! 4 Columns Right */
+  &__col-4--right
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(5 of 12)
+      +shift(5)
     img
-      +shift(9)
+      width: 100%
 
-.layout__col-6--right
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(6 of 12)
-  img
-    width: 100%
+  /*! 4 Columns Left */
+  &__col-4--left
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(5 of 12)
+    img
+      width: 100%
 
-.layout__col-6--left
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(6 of 12)
-  img
-    width: 100%
+  &__col-4--center
+    +row
+    +span-columns(12 of 12)
+    img
+      width: 100%
+    @media screen and (min-width: 768px)
+      +span-columns(5 of 12)
+      img
+        +shift(9)
 
-.layout__col-8--right
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(8 of 12)
-  img
-    width: 100%
+  &__col-6--right
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(6 of 12)
+    img
+      width: 100%
 
-.layout__col-8--left
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(8 of 12)
-  img
-    width: 100%
+  &__col-6--left
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(6 of 12)
+    img
+      width: 100%
 
-.layout__col-10--right
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(10 of 12)
-  img
-    width: 100%
+  &__col-8--right
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(8 of 12)
+    img
+      width: 100%
 
-.layout__col-10--left
-  +row
-  +span-columns(12)
-  @media screen and (min-width: 768px)
-    +span-columns(10 of 12)
-  img
-    width: 100%
+  &__col-8--left
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(8 of 12)
+    img
+      width: 100%
 
-.layout__col-12
-  +row
-  +span-columns(12)
-  img
-    width: 100%
+  &__col-10--right
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(10 of 12)
+    img
+      width: 100%
 
+  &__col-10--left
+    +row
+    +span-columns(12)
+    @media screen and (min-width: 768px)
+      +span-columns(10 of 12)
+    img
+      width: 100%
 
-
-// .layout
-//   @include row()
-//   &__col-4
-//     @include span-columns(4)
-//     @media screen and (max-width: 768px)
-//       @include span-columns(12 of 12)
-//     &--right
-//       color: blue
-//     &--left
-//       color: red
+  &__col-12
+    +row
+    +span-columns(12)
+    img
+      width: 100%
 
 
 .svg-streak
@@ -231,3 +227,7 @@ p
   height: 5rem
   @media screen and (min-width: 768px)
     height: 20rem
+
+
+.handled
+  opacity: 1
